@@ -1,26 +1,49 @@
-<form>
-    <div class="form-group">
-        <label for="username">User Name</label>
-        <input 
-        class="form-control"
-        type="text"
-         id="username"
-         name="username"
-         ngModel
-         >
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 offset-lg-4 offset-md-3">
+              <div class="panel border bg-white">
+                <div class="panel-heading">
+                    <h4 class="pt-3 font-wieght-bold">
+                        Login
+                    </h4>
+                </div>
+                    <div class="panel-body p-3">
+                        <form (ngSubmit)="onLogin()" [formGroup]="loginForm" >
+                            <div class="form-group p-3">
+                                <div class="input-field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input 
+                                    placeholder="username"
+                                    type="text"
+                                     >
+                                </div>   
+                            </div>
+                           
+                            <div class="form-group p-3">
+                                <div class="input-field">
+                                    <span class="fa fa-lock p-2"></span>
+                                    <input 
+                                    placeholder="password"
+                                    [type]="type"
+                                     >   
+                                     <span 
+                                     (click)="hideShowPassword()"
+                                     class="fa {{eyeIcon}}"></span>
+                                </div>   
+                            </div>
+                            <button 
+                            class="btn btn-primary mt-4 btn-block w-100"
+                            type="submit"
+                            >Login</button>
+                            <div class="text-center text-muted mt-4">Don't have account?
+                                <a routerLink="/signup">Sign Up</a>
+                            </div>
+                          </form>
+                    </div>
+              </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input 
-        class="form-control"
-        type="password"
-        id="password"
-        name="password"
-        ngModel
-        >
-    </div>
-    <button 
-    class="btn"
-    type="button"
-    >Login</button>
-</form>
+</div>
+
