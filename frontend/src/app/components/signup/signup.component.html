@@ -7,13 +7,14 @@
                         <h4 class="font-wieght-bold pt-3">Signup</h4>
                     </div>
                     <div class="panel-body p-3">
-                        <form>
+                        <form (ngSubmit)="onSignup()" [formGroup]="signupForm">
                             <div class="form-group p-3">
                                 <div class="input-field">
                                     <span class="fa fa-user p-2"></span>
                                     <input 
                                     type="text"
                                     placeholder="Firstname"
+                                    formControlName="firstName"
                                     >
                                 </div>
                             </div>
@@ -23,6 +24,7 @@
                                     <input
                                      type="text"
                                      placeholder="Lastname"
+                                     formControlName="lastName"
                                      >
                                 </div>
                             </div>
@@ -32,6 +34,7 @@
                                     <input 
                                     type="text"
                                     placeholder="Username"
+                                    formControlName="userName"
                                     >
                                 </div>
                             </div>
@@ -41,6 +44,7 @@
                                     <input
                                      type="email"
                                      placeholder="Email"
+                                     formControlName="email"
                                      >
                                 </div>
                             </div>
@@ -50,6 +54,7 @@
                                     <input 
                                     [type]="type"
                                     placeholder="Password"
+                                    formControlName="Password"
                                     >
                                     <span 
                                     (click)=" hideShowPassword()"
