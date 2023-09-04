@@ -29,6 +29,11 @@
      border: 1px solid #ddd;
      color: #4343ff;
  }
+
+ .input-field.error{
+     border: 1px solid red;
+ }
+ 
  
  input {
      border: none;
