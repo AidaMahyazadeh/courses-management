@@ -30,6 +30,10 @@
     color: #4343ff;
 }
 
+.input-field.error{
+    border: 1px solid red;
+}
+
 input {
     border: none;
     box-shadow: none;
@@ -37,10 +41,9 @@ input {
     width: 100%;
 }
 
+
 .fa-eye-slash{
     border: none;
-
-    
 }
 
 a{
