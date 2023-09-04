@@ -11,30 +11,40 @@
                     <div class="panel-body p-3">
                         <form (ngSubmit)="onLogin()" [formGroup]="loginForm" >
                             <div class="form-group p-3">
-                                <div class="input-field">
+                                <div class="input-field"
+                                [class.error]="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')"
+                                >
                                     <span class="fa fa-user p-2"></span>
                                     <input 
                                     placeholder="username"
                                     type="text"
+                                    formControlName="userName"
                                      >
                                 </div>   
                             </div>
-                           
+                           <small 
+                           *ngIf="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')"
+                           class="text-danger">*Username is required.</small>
                             <div class="form-group p-3">
-                                <div class="input-field">
+                                <div class="input-field"
+                                [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"
+                                >
                                     <span class="fa fa-lock p-2"></span>
                                     <input 
                                     placeholder="password"
                                     [type]="type"
+                                    formControlName="password"
                                      >   
                                      <span 
                                      (click)="hideShowPassword()"
                                      class="fa {{eyeIcon}}"></span>
                                 </div>   
                             </div>
+                            <small
+                            *ngIf="loginForm.controls['password'].dirty&& loginForm.hasError('required','password')"
+                            class="text-danger">*password is required.</small>
                             <button 
                             class="btn btn-primary mt-4 btn-block w-100"
-                            type="submit"
                             >Login</button>
                             <div class="text-center text-muted mt-4">Don't have account?
                                 <a routerLink="/signup">Sign Up</a>
