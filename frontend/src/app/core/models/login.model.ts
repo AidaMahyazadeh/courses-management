@@ -1,4 +1,4 @@
-export interface ILogin {
+export interface ILoginForm {
     userName :string;
     password :string;
 }
