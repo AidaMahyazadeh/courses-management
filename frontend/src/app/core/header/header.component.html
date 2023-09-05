@@ -1,0 +1,36 @@
+<header id="header">
+    <div class="container">
+        <a routerLink="/home" class="home">
+            CODELAND
+        </a>
+        <ul>
+            <li>
+                <a *ngIf="isLoggedin()
+                " 
+                class="cart" (click)="logout()">Logout</a>
+            </li>
+            <li>
+                <a routerLink="/admin"
+                *ngIf="isLoggedin()"
+                class="cart"
+               >
+            <i class="fa fa-lock"></i>
+            </a>
+            </li>
+            <li>
+                <span
+                *ngIf="isLoggedin()" class='fa fa-heart' routerLink="/wishlist" ></span>
+            </li>
+            <li>
+                <a *ngIf="isLoggedin()" class="cart" >cart
+                    <span class="fa fa-cart-plus"></span>
+                </a>
+            </li>
+            <li>
+                <a *ngIf="isLoggedin()" class="cart" >
+                    <span class="fa fa-bell"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
