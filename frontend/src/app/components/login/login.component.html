@@ -9,21 +9,21 @@
                     </h4>
                 </div>
                     <div class="panel-body p-3">
-                        <form (ngSubmit)="onLogin()" [formGroup]="loginForm" >
+                        <form  [formGroup]="loginForm" (ngSubmit)="onLogin()">
                             <div class="form-group p-3">
                                 <div class="input-field"
-                                [class.error]="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')"
+                                [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"
                                 >
                                     <span class="fa fa-user p-2"></span>
                                     <input 
                                     placeholder="username"
                                     type="text"
-                                    formControlName="userName"
+                                    formControlName="username"
                                      >
                                 </div>   
                             </div>
                            <small 
-                           *ngIf="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')"
+                           *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"
                            class="text-danger">*Username is required.</small>
                             <div class="form-group p-3">
                                 <div class="input-field"

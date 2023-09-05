@@ -10,53 +10,53 @@
                         <form (ngSubmit)="onSignup()" [formGroup]="signupForm">
                             <div class="form-group p-3">
                                 <div class="input-field"
-                                [class.error]="signupForm.controls['firstName'].dirty&& signupForm.hasError('required','firstName')"
+                                [class.error]="signupForm.controls['firstname'].dirty&& signupForm.hasError('required','firstname')"
                                 >
                                     <span class="fa fa-user p-2"></span>
                                     <input 
                                     type="text"
                                     placeholder="Firstname"
-                                    formControlName="firstName"
+                                    formControlName="firstname"
                                     >
                                 </div>
                             </div>
                             <small 
                             class="text-danger"
-                            *ngIf="signupForm.controls['firstName'].dirty&& signupForm.hasError('required','firstName')">*Firstname is required.</small>
+                            *ngIf="signupForm.controls['firstname'].dirty&& signupForm.hasError('required','firstname')">*Firstname is required.</small>
                             <div class="form-group p-3">
                                 <div class="input-field"
-                                [class.error]="signupForm.controls['lastName'].dirty&& signupForm.hasError('required','lastName')"
+                                [class.error]="signupForm.controls['lastname'].dirty&& signupForm.hasError('required','lastname')"
                                 >
                                     <span class="fa fa-user p-2"></span>
                                     <input
                                      type="text"
                                      placeholder="Lastname"
-                                     formControlName="lastName"
+                                     formControlName="lastname"
                                      >
                                 </div>
                             </div>
                             <small 
                             class="text-danger"
-                            *ngIf="signupForm.controls['lastName'].dirty&& signupForm.hasError('required','lastName')">*Lastname is required.</small>
+                            *ngIf="signupForm.controls['lastname'].dirty&& signupForm.hasError('required','lastname')">*Lastname is required.</small>
                             <div class="form-group p-3">
                                 <div class="input-field"
-                                [class.error]="signupForm.controls['userName'].dirty&& signupForm.hasError('required','userName')|| signupForm.hasError('minlength','userName')"
+                                [class.error]="signupForm.controls['username'].dirty&& signupForm.hasError('required','username')|| signupForm.hasError('minlength','username')"
                                 >
                                     <span class="fa fa-user p-2"></span>
                                     <input 
                                     type="text"
                                     placeholder="Username"
-                                    formControlName="userName"
+                                    formControlName="username"
                                     >
                                 </div>
                             </div>
                             <div>
                                 <small 
                                 class="text-danger"
-                                *ngIf="signupForm.controls['userName'].dirty&& signupForm.hasError('required','userName')">*Username is   required.</small>
+                                *ngIf="signupForm.controls['username'].dirty&& signupForm.hasError('required','username')">*Username is   required.</small>
                                 <small 
                                 class="text-danger"
-                                *ngIf="signupForm.hasError('minlength','userName')">*Username should have minimum {{signupForm.controls['userName'].errors?.['minlength'].requiredLength}} characters.</small>
+                                *ngIf="signupForm.hasError('minlength','username')">*Username should have minimum {{signupForm.controls['username'].errors?.['minlength'].requiredLength}} characters.</small>
                             </div>
                             <div class="form-group p-3">
                                 <div class="input-field"
