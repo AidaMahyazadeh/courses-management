@@ -26,6 +26,7 @@ export class AuthStorageService {
   removeTokenRole(){
     localStorage.removeItem('token')
     localStorage.removeItem('role')
+    localStorage.removeItem('username')
   }
 
   storeUserName(username :string){
