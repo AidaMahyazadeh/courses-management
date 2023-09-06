@@ -7,8 +7,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
-
 
 
 
