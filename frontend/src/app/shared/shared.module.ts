@@ -1,15 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchComponent } from './search/search.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedRoutingModule } from './shared-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    SearchComponent
+    HomeComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedRoutingModule,
+    ReactiveFormsModule
   ]
+
 })
 export class SharedModule { }
