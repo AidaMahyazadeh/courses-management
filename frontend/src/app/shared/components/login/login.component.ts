@@ -11,7 +11,7 @@ import { AuthenticationService } from 'src/app/core/services/authentication.serv
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm !:FormGroup;
+  loginForm !:FormGroup ;
   eyeIcon = 'fa-eye-slash';
   type = 'password';
   isText = false;
