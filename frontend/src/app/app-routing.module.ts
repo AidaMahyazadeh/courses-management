@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { adminAuthGuard } from './core/services/guards/admin-auth.guard';
-import { SharedRoutingModule } from './shared/shared-routing.module';
+
 
 const routes: Routes = [
   {path : '', redirectTo :'login',pathMatch:'full'},
@@ -12,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),SharedRoutingModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
