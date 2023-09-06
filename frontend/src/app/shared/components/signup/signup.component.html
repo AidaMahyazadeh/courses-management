@@ -7,7 +7,7 @@
                         <h4 class="font-wieght-bold pt-3">Signup</h4>
                     </div>
                     <div class="panel-body p-3">
-                        <form (ngSubmit)="onSignup()" [formGroup]="signupForm">
+                        <form  *ngIf="signupForm" (ngSubmit)="onSignup()" [formGroup]="signupForm">
                             <div class="form-group p-3">
                                 <div class="input-field"
                                 [class.error]="signupForm.controls['firstname'].dirty&& signupForm.hasError('required','firstname')"
