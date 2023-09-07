@@ -8,6 +8,8 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -23,6 +25,8 @@ import { AppComponent } from './app.component';
     ToastrModule.forRoot(),
     CoreModule,
     SharedModule,
+   
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
