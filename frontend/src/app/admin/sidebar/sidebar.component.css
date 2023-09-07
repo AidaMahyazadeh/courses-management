@@ -1,0 +1,22 @@
+.sidebar{
+    background: linear-gradient(to top, #c9c9ff, #6e6ef6);
+}
+
+
+
+label{
+    color: beige;
+    font-size: large;
+    cursor: pointer;
+    margin: 30px;
+}
+
+.fa{
+    color: beige;
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
