@@ -6,6 +6,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedRoutingModule } from './shared-routing.module';
 import { CardComponent } from './components/card/card.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 
@@ -14,12 +16,14 @@ import { CardComponent } from './components/card/card.component';
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    CardComponent
+    CardComponent,
+    PaymentComponent
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPayPalModule
   ]
 
 })
