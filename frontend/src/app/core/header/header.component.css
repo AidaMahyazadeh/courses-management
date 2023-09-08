@@ -36,10 +36,7 @@ header{
      font-size: xx-small;
  }
  
- .fa-heart{
-     color: blue;
-     margin-top: 18px;
- }
+ 
  
  li {
      margin-left: 30px;
@@ -49,3 +46,5 @@ header{
     font-style: italic;
     font-weight: bold;
  }
+
+ 
