@@ -25,7 +25,7 @@ export class AuthenticationService {
    }
 
    logout(){
-    this.AuthStorageService.removeTokenRole()
+    this.AuthStorageService.removeUnneccessaryStorage()
    }
   
   getAllUsers ()   {
