@@ -7,7 +7,7 @@
             <li>
                 <a *ngIf="isLoggedin()
                 " 
-                class="cart" (click)="logout()">Logout</a>
+                class="cart logout" (click)="logout()">Logout</a>
             </li>
             <li>
                 <a routerLink="/admin"
@@ -18,12 +18,14 @@
             </a>
             </li>
             <li>
-                <span
-                *ngIf="isLoggedin()&& !isAdmin()" class='fa fa-heart' routerLink="/wishlist" ></span>
-            </li>
-            <li>
-                <a *ngIf="isLoggedin()&&!isAdmin()" class="cart" >
+                <a *ngIf="isLoggedin()&&!isAdmin()" class="cart"
+                data-toggle="modal"
+                (click)="openModal()">
                     <span class="fa fa-cart-plus"></span>
+                    <span 
+                    class="badge bg-danger"
+                    *ngIf="cartItemLength>0"
+                    >{{cartItemLength}}</span>
                 </a>
             </li>
             <li>
