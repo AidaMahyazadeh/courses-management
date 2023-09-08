@@ -1,1 +1,31 @@
-<p>course-details works!</p>
+<button class="btn btn-back"
+(click)="backToAllCourses()"
+>Back</button>
+<div class="container" >
+  <div>
+    <div *ngFor="let course of selectedCourse">
+        <div class="info">
+            <img [src]="course.image" class="card-img-top responsive 
+            " alt="@abdelali">
+            <div class="card-body">
+                <h5 class="text-center">
+                    <strong>{{course.name}}</strong>
+                    <br>
+                    <strong 
+                    >{{course.author}}</strong>
+                </h5>
+              <p class="card-text">{{course.description}} </p>
+              
+            
+              <div class="mb-5 d-flex justify-content-around">
+                <h6>Price: ${{course.price}}</h6>
+                    <button class="btn btn-buy"
+                    (click)="addCourseToCart(course)"
+                    >Buy </button>
+                   
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
