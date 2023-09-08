@@ -1,21 +1,18 @@
-    <app-search (searchedText)=" onSearchedCourse($event)"></app-search>
-      <ng-container>
+    <app-search  *ngIf="getRoute()" (searchedText)=" onSearchedCourse($event)"></app-search>
+      <ng-container *ngIf="getRoute()">
         <div class="container py-5" >
-                <div class="row row-cols-3 row-cols-md-3">
-                <div class="col col-12 col-md-6 col-lg-3 " *ngFor="let course of courses">
-                    <div class="card" *ngIf="!searchedCourse || course.name.toLowerCase().includes(searchedCourse)">
+                <div class="row ">
+                <div class="col-md-4" *ngFor="let course of courses">
+                    <div class="card h-100" *ngIf="!searchedCourse || course.name.toLowerCase().includes(searchedCourse)">
                         <div >
                         <img [src]="course.image" class="card-img-top" alt={{course.name}}>
                         <div class="card-body">
                           <h5 class="card-title">{{course.name}}</h5>
-                          <p class="card-text">{{course.description.slice(0,40)}}...</p>
+                          <p class="card-text">{{course.description.slice(0,30)}}...</p>
                         </div>
                         <div class="mb-5 d-flex justify-content-around">
-                            <h6>Price: ${{course.price}}</h6>
-                            <div class="buttons">
-                                <button class="btn btn-buy" (click)="addItemToCart()">Buy Now</button>
-                                <button class="btn btn-show">show</button>
-                            </div>
+                            <h6>Price: {{course.price |currency :'EUR'}}</h6>
+                                <button class="btn btn-show" [routerLink]="[(course.name.slice(0,10)),course.id]">Details</button>
                         </div>
                       </div>
                     </div>
@@ -23,5 +20,5 @@
             </div>
         </div>
     </ng-container>  
-
+ <router-outlet></router-outlet>
    
