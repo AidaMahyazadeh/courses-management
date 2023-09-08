@@ -1,1 +1,57 @@
-<p>card works!</p>
+<!-- <div class="container d-flex">
+    <div class="row">
+        <div>
+            <i class='fa fa-shopping-bag fa-fw fa-3x'></i>
+            <h4>Your cart is empty.</h4>
+            <button routerLink="/courses" (click)="close()" >Keep shopping</button>
+        </div>
+        <div class="cart">
+            <h3>Total</h3>
+            <h2>$ price</h2>
+        </div>
+    </div>
+</div> -->
+<ng-container *ngIf="courses.length>0">
+    <div >
+        <div class="card">
+            <div class="course">
+                <table class="table">
+                   <thead>
+                     <tr>
+                       
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr *ngFor="let course of courses">
+                        <td>{{course.name}}
+                            <h6 class="text-muted fs-6">by {{course.author}}</h6>
+                        </td>
+                        <td><img src="{{course.image}}" alt="{{course.name}}"></td>
+                        <td>{{course.price | currency :'EUR'}}
+                        </td>
+                          <td>
+                            <i class='fa fa-trash' aria-hidden="true" 
+                            (click)="deleteCourse(course)"
+                            ></i>
+                        </td>
+                     </tr>
+                     <tr>
+                      <td>
+                        <button
+                         class="btn btn-success" routerLink="/courses" (click)="close()">Keep shopping</button>
+                      </td>
+                      <td>
+                        <button
+                         class="btn btn-warning" 
+                         (click)="onCheckout()"
+                         >Checkout</button>
+                      </td>
+                      <td > <strong>Total : {{totalPrice | currency :'EUR'}}</strong> </td>
+                     </tr>
+                   </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+</ng-container>
+
