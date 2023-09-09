@@ -3,17 +3,22 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth/auth.interceptor';
+import { SharedModule } from '../shared/shared.module';
+import { SharedRoutingModule } from '../shared/shared-routing.module';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedRoutingModule
   ],
-  exports :[HeaderComponent],
+  exports :[HeaderComponent,FooterComponent],
   providers :[
     {
       provide : HTTP_INTERCEPTORS,
