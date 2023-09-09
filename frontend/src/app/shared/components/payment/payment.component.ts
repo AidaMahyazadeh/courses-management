@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
+import ICourse from 'src/app/core/models/course.model';
 import { AuthStorageService } from 'src/app/core/services/auth/auth-storage.service';
+import { CartService } from 'src/app/core/services/cart.service';
 
 @Component({
   selector: 'app-payment',
@@ -15,9 +17,12 @@ export class PaymentComponent implements OnInit{
   showError !:boolean;
   showCancel !:boolean;
   totalCart :number =0;
+  enrolledCourses !:ICourse[];
+  @Output() orderId = new EventEmitter<string>()
 
   constructor(
     private authStorageService:AuthStorageService,
+    private cartService :CartService,
     private activeModal:NgbActiveModal,
     private router:Router
   ){} 
@@ -25,6 +30,7 @@ export class PaymentComponent implements OnInit{
 
   ngOnInit() {
     this.totalCart=this.authStorageService.getCartTotal()
+    this.enrolledCourses = this.authStorageService.getCartItem()
       this.initConfig();
   }
 
@@ -63,12 +69,15 @@ export class PaymentComponent implements OnInit{
               label: 'paypal',
               layout: 'vertical'
           },
-          onApprove: (data) => {
+          onApprove: (data, actions) => {
             
-              // console.log('onApprove - transaction was approved, but not authorized', data, actions);
-              // actions.order.get().then((details:any) => {
-              //     console.log('onApprove - you can get full order details inside onApprove: ', details);
-              // });
+              console.log('onApprove - transaction was approved, but not authorized', data, actions);
+              actions.order.get().then((details:any) => {
+                //   console.log('onApprove - you can get full order details inside onApprove: ', details);
+                this.orderId.emit(data.orderID)
+                //  alert( `Your order with this id ${data.orderID} has been placed successfully`)
+
+              });
 
           },
           onClientAuthorization: (data) => {
@@ -76,20 +85,20 @@ export class PaymentComponent implements OnInit{
               this.showSuccess = true;
               this.totalCart =0
               this.activeModal.close()
+              this.cartService.removeAllCartCourses()
               this.authStorageService.removeCartTotal()
+              this.authStorageService.removeCartItem()
+              this.authStorageService.storeEnrolledCourse(this.enrolledCourses)
+              this.authStorageService.clearPayPalStorage()
               this.router.navigate(['courses'])
           },
           onCancel: (data, actions) => {
               console.log('OnCancel', data, actions);
               this.showCancel = true;
-
           },
           onError: err => {
               console.log('OnError', err);
               this.showError = true;
-          },
-          onClick: (data, actions) => {
-              console.log('onClick', data, actions);
           }
       };
   }
