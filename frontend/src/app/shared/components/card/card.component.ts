@@ -39,9 +39,10 @@ deleteCourse(course:ICourse){
   this.cartService.removeCourseFromCard(course.id)
 }
 
-onCheckout(){
+onCheckout(course:ICourse[]){
   this.authStorageService.storeCartTotal(this.totalPrice)
-  this.cartService.removeAllCartCourses()
+  // this.cartService.removeAllCartCourses()
+  // this.authStorageService.storeEnrolledCourse(course)
   this.close()
   this.open()
 }
