@@ -25,7 +25,6 @@ import { AppComponent } from './app.component';
     CoreModule,
     NgbModalModule,
     SharedModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
