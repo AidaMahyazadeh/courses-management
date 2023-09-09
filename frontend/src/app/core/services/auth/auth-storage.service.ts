@@ -73,7 +73,20 @@ export class AuthStorageService {
     localStorage.removeItem('cartTotal')
   }
 
+  storeEnrolledCourse(course:ICourse[]){
+    localStorage.setItem('enrolledCourse',JSON.stringify(course))
+  }
+
+  getEnrolledCourse(){
+    return JSON.parse(localStorage.getItem('enrolledCourse')!)
+  }
+
+  removeEnrolledCourse(){
+    localStorage.removeItem('enrolledCourse')
+  }
+
   clearPayPalStorage(){
     localStorage.removeItem('__paypal_storage__')
   }
+
 }
