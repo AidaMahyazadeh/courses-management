@@ -1,24 +1,20 @@
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-2">
-            <div class="sidebar p-2 min-vh-100">
+            <div class="sidebar ">
                 <ul class="nav nav-pills flex-column mt-4">
                     <li class="nav-item">
                         <i class="fa fa-user" aria-hidden="true"></i> 
-                        <label [routerLink]="['user-list']">Users</label>
+                        <label [routerLink]="['users-list']">Users</label>
                     </li>
                     <li class="nav-item">
                         <i class="fa fa-user" aria-hidden="true"></i> 
-                        <label >Professores</label>
+                        <label [routerLink]="['professors-list']" >Professores</label>
                     </li>
                     <li class="nav-item">
                         <i class="fa fa-list" aria-hidden="true"></i> 
-                        <label >Course List</label>
+                        <label [routerLink]="['courses-list']">Course List</label>
                     </li>
-                    <li>
-                        <i class="fa fa-book"></i>
-                        <label >Add Course</label>
-                     </li>
                 </ul>
             </div>
         </div>
