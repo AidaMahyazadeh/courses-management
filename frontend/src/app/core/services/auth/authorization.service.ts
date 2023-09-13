@@ -9,7 +9,7 @@ export class AuthorizationService {
   constructor(private authStorageService :AuthStorageService) { }
 
   isLoggedIn(){
-  return  (!!this.authStorageService.getToken())
+  return  (!!this.authStorageService.getUserName())
   }
 
   isAdmin(){
