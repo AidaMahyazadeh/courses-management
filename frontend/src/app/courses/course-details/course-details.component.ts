@@ -28,7 +28,7 @@ export class CourseDetailsComponent implements OnInit, OnDestroy {
     })
    this.subscription= this.courseService.getCourseById(this.id).subscribe(res=>{
       this.selectedCourse=res
-      console.log(this.selectedCourse)
+      // console.log(this.selectedCourse)
     })
     }
 
