@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+
 import { AuthStorageService } from 'src/app/core/services/auth/auth-storage.service';
 import { AuthenticationService } from 'src/app/core/services/auth/authentication.service';
 
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     private authService :AuthenticationService,
     private authStorageService :AuthStorageService,
     private router :Router,
-    private toast : ToastrService
+    private toast : ToastrService,
+  
     ){}
 
   ngOnInit(): void {
@@ -41,12 +43,13 @@ if(this.loginForm.valid){
   this.authService.login(this.loginForm.value).subscribe({
     next:
       (res)=>{
-        console.log(res)
-       this.authStorageService.storeToken(res.token) 
+        // console.log(res)
+        this.authStorageService.storeToken(res.token) 
        this.authStorageService.storeRole(res.user.role)
        this.authStorageService.storeUserName(res.user.username)
        res.user.role==='admin'?this.router.navigate(['admin']):this.router.navigate(['home'])
        this.toast.success(`Welcome back, ${this.loginForm.controls['username'].value}!`)
+    
       },
     error:
       (err) =>{

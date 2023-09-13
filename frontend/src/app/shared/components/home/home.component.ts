@@ -9,11 +9,16 @@ import { AuthStorageService } from 'src/app/core/services/auth/auth-storage.serv
 export class HomeComponent implements OnInit{
 userName !:string;
 screenImage ='../../../assets/screenImage/shutterstock_1612044622.jpg'
+orderedCourseId !:string;
 
 constructor(private authStorageService :AuthStorageService){}
 
 ngOnInit(){
  return this.userName = this.authStorageService.getUserName()!
+}
+
+getOrderId(orderId :string|any){
+ this.orderedCourseId=orderId
 }
 
 }
