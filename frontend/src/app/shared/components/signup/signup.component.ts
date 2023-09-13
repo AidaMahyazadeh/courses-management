@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AdminAuthStorageService } from 'src/app/core/services/admin/admin-auth-storage.service';
 import { AuthenticationService } from 'src/app/core/services/auth/authentication.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private authService:AuthenticationService,
     private toast :ToastrService,
-    private router :Router
+    private router :Router,
+    private adminAuthStorageService:AdminAuthStorageService
   ){}
 
 
@@ -31,7 +33,8 @@ export class SignupComponent implements OnInit {
       lastname : new FormControl('',Validators.required),
       username : new FormControl('',[Validators.required,Validators.minLength(4)]),
       email : new FormControl('',[Validators.required,Validators.email,Validators.pattern(this.emailPattern)]),
-      password : new FormControl('',[Validators.required,Validators.pattern(this.passwordPattern)])
+      password : new FormControl('',[Validators.required,Validators.pattern(this.passwordPattern)]),
+      enrolledCourse : new FormControl ([])
     })
   }
 
@@ -45,7 +48,10 @@ export class SignupComponent implements OnInit {
     if(this.signupForm.valid){
       this.authService.signup(this.signupForm.value).subscribe({
         next :(res =>{
-          console.log(res)
+          const{firstname,lastname,username,email,password,enrolledCourse}= this.signupForm.value
+          const user ={firstname,lastname,username,email,password,enrolledCourse};
+           this.adminAuthStorageService.storeAllUsers(user)
+           console.log(user)
           this.toast.success(`${this.signupForm.controls['firstname'].value}, you are signed up successfully.`)
           this.signupForm.reset();
           this.router.navigate(['/login'])
