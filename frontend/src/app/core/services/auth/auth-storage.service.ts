@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import ICourse from '../../models/course.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthStorageService {
  courses :ICourse[]=[];
+ enrolledCourses :ICourse[]=[];
+ enrolledCourseSubject$ = new BehaviorSubject<ICourse[]>([]);
 
   constructor() { }
 
@@ -22,13 +25,14 @@ export class AuthStorageService {
   } 
 
   getRole(){
-   return localStorage.getItem('role')
+   return (localStorage.getItem('role')!)
   }
 
   removeUnneccessaryStorage(){
     localStorage.removeItem('token')
     localStorage.removeItem('role')
     localStorage.removeItem('username')
+    localStorage.removeItem('enrolledCourse')
     localStorage.removeItem('__paypal_storage__')
   }
 
@@ -36,8 +40,8 @@ export class AuthStorageService {
     localStorage.setItem('username',username)
   }
 
-  getUserName(){
-    return localStorage.getItem('username')
+  getUserName():string{
+    return (localStorage.getItem('username')!)
   }
 
   storeCartItem(course :ICourse[]){
@@ -73,12 +77,23 @@ export class AuthStorageService {
     localStorage.removeItem('cartTotal')
   }
 
-  storeEnrolledCourse(course:ICourse[]){
-    localStorage.setItem('enrolledCourse',JSON.stringify(course))
+ 
+  storeEnrolled(){
+    localStorage.setItem('enrolledCourse',JSON.stringify(this.enrolledCourses))
   }
 
-  getEnrolledCourse(){
-    return JSON.parse(localStorage.getItem('enrolledCourse')!)
+  storeEnrolledCourse(course:ICourse[]){
+    // this.enrolledCourses = this.getEnrolledCourse();
+    this.enrolledCourses.push(...course)
+    this.storeEnrolled()
+  }
+
+  getEnrolledCourse():ICourse[]{
+   return JSON.parse(localStorage.getItem('enrolledCourse')!)
+  }
+
+  existedEnrolledCourse(course:ICourse):boolean{
+    return( this.enrolledCourses.findIndex(item=>item.id==course.id)>-1)
   }
 
   removeEnrolledCourse(){
@@ -87,6 +102,15 @@ export class AuthStorageService {
 
   clearPayPalStorage(){
     localStorage.removeItem('__paypal_storage__')
+  }
+
+  getAllUserDetail(){
+   const user ={
+      username :this.getUserName(),
+      role :this.getRole(),
+      enrolledCourse:this.getEnrolledCourse()
+     }
+     return user
   }
 
 }
