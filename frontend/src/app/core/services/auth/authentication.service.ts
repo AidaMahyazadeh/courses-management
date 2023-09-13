@@ -4,6 +4,7 @@ import ISignUpForm from '../../models/signup.model';
 import { ILoginForm } from '../../models/login.model';
 import { Observable } from 'rxjs';
 import { AuthStorageService } from './auth-storage.service';
+import IUser from '../../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,9 @@ export class AuthenticationService {
     this.AuthStorageService.removeUnneccessaryStorage()
    }
   
-  getAllUsers ()   {
-    return this.http.get (`${this.baseUrl}users`)
+  getAllUsers () :Observable<IUser[]>  {
+    return this.http.get<IUser[]> (`${this.baseUrl}users`)
   }
+
+  
 }
