@@ -27,11 +27,11 @@
     "price": 99, "ratings": 4.0, "image":"assets/images/course-image-7.jpeg",
       "description": "In this course you will learn the fundamentals and advance concepts of React. This course is purely designed for beginners and teaches you all the concepts of React step by step"
     },
-    { "id":8, "name":"UX Design Course beginners", "author": "Steve Smith", "duration": 19.0, "type": "Premium", 
+    { "id":8, "name":"UX Design Course beginners", "author": "John Smith", "duration": 19.0, "type": "Premium", 
     "price": 69, "ratings": 4.8, "image":"assets/images/course-image-8.jpeg",
       "description": "In this course you will learn about reactive web development using HTML & CSS. This course will start teaching you from basics of HTML & CSS and as you progress, you will learn all the advance concepts."
     },
-    {"id":9, "name":"UX Design Course: Advance", "author": "Steve Smith", "duration": 20.0, "type": "Premium", 
+    {"id":9, "name":"UX Design Course: Advance", "author": "John Smith", "duration": 20.0, "type": "Premium", 
      "price": 115, "ratings": 4.8, "image":"assets/images/course-image-9.jpeg",
       "description": "Using the latest best practices in Web Design and Mobile Design as well as User Interface and User Experience Design (UI/UX), this course focuses on efficiently getting you from zero to a point where you can get hired or win freelance contracts. We will use in demand tools like Figma to show you a full workflow from start to finish. Graduates of Andrei’s courses are now working at Google, Tesla, Amazon, Apple, IBM, JP Morgan, Facebook, + other top tech companies.The course also includes 100+ assets and premium design templates that you can keep and use to customize for all your future projects. We guarantee you this is the most comprehensive online resource on Design skills!"
     }

@@ -1,0 +1,7 @@
+[
+    {"id":1,"name":"John Heikela", "courses" :["JavaScript for beginners","JavaScript Course"]},
+    {"id":2,"name":"Mark Vought", "courses" :["Angular for beginners","Angular with .NET Core"]},
+    {"id":3,"name":"Steve Smith", "courses" :["React course for beginners","Advance Angular Course"]},
+    {"id":4,"name":"Merry Smith", "courses" :["Advance React Course"]},
+    {"id":5,"name":"John Smith", "courses" :["UX Design Course beginners","UX Design Course: Advance"]}
+]
