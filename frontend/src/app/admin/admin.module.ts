@@ -4,6 +4,9 @@ import { AdminComponent } from './admin.component';
 import { AdminRoutingModule } from './admin-routing-module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UserslistComponent } from './userslist/userslist.component';
+import { CourseListComponent } from './course-list/course-list.component';
+import { ProfessorsComponent } from './professors/professors.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,11 +15,14 @@ import { UserslistComponent } from './userslist/userslist.component';
   declarations: [
     AdminComponent,
     SidebarComponent,
-    UserslistComponent
+    UserslistComponent,
+    CourseListComponent,
+    ProfessorsComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
   ]
 })
 export class AdminModule { }
