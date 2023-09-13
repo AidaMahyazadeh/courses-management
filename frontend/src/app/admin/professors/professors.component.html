@@ -1,0 +1,29 @@
+<div class="container">
+    <section class="table-header">
+      <h1>User list</h1>
+    </section>
+    <section class="table-body">
+      <table>
+          <thead>
+              <tr>
+                  <th>id</th>
+                  <th>Author Name</th>
+                  <th>courses</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let professor of professores">
+                  <td>{{professor.id}}</td>
+                  <td>{{professor.name}}</td>
+                  <td>{{professor.courses}}</td>
+                
+                  <td>
+                    <button (click)="onDelete(professor.id)">delete</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+    </section>
+  </div>
+
+
