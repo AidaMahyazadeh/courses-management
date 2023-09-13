@@ -1,0 +1,38 @@
+<div class="container">
+    <section class="table-header">
+      <h1>User list</h1>
+    </section>
+    <section class="table-body">
+      <table>
+          <thead>
+              <tr>
+                  <th>id</th>
+                  <th>Course Name</th>
+                  <th>Author Name</th>
+                  <th>Image</th>
+                  <th>Description</th>
+                  <th>Price</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let course of courses ; index as i">
+                  <td>{{course.id}}</td>
+                  <td>{{course.name}}</td>
+                  <td>{{course.author}}</td>
+                  <td>
+                    <img width="50"
+                    height="50" 
+                    [src]="course.image" 
+                    alt="{{course.name}}">
+                </td>
+                  <td>{{course.description.slice(0,80)}}...</td>
+                  <td>{{course.price | currency :'EUR'}}</td>
+                  <td>
+                    <button (click)="onDelete(course.id)">delete</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+    </section>
+  </div>
+
