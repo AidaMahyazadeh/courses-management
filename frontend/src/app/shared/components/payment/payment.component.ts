@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
 import ICourse from 'src/app/core/models/course.model';
+import { AdminAuthStorageService } from 'src/app/core/services/admin/admin-auth-storage.service';
+import { UsersListService } from 'src/app/core/services/admin/users-list.service';
 import { AuthStorageService } from 'src/app/core/services/auth/auth-storage.service';
 import { CartService } from 'src/app/core/services/cart.service';
 
@@ -17,6 +19,7 @@ export class PaymentComponent implements OnInit{
   showError !:boolean;
   showCancel !:boolean;
   totalCart :number =0;
+  selectedCourses !:ICourse[] 
   enrolledCourses !:ICourse[];
   @Output() orderId = new EventEmitter<string>()
 
@@ -24,14 +27,16 @@ export class PaymentComponent implements OnInit{
     private authStorageService:AuthStorageService,
     private cartService :CartService,
     private activeModal:NgbActiveModal,
-    private router:Router
+    private router:Router,
+    private adminAuthStoragrService :AdminAuthStorageService,
+    private userListService: UsersListService
   ){} 
 
 
   ngOnInit() {
     this.totalCart=this.authStorageService.getCartTotal()
     this.enrolledCourses = this.authStorageService.getCartItem()
-      this.initConfig();
+    this.initConfig();
   }
 
   private initConfig(): void {
@@ -85,10 +90,13 @@ export class PaymentComponent implements OnInit{
               this.showSuccess = true;
               this.totalCart =0
               this.activeModal.close()
-              this.cartService.removeAllCartCourses()
               this.authStorageService.removeCartTotal()
-              this.authStorageService.removeCartItem()
               this.authStorageService.storeEnrolledCourse(this.enrolledCourses)
+              let userDetail=this.authStorageService.getAllUserDetail()
+             this.adminAuthStoragrService.updateExistedUsers(userDetail.username,userDetail.enrolledCourse)  
+              console.log(userDetail)
+              this.authStorageService.removeCartItem()
+              this.cartService.removeAllCartCourses()
               this.authStorageService.clearPayPalStorage()
               this.router.navigate(['courses'])
           },
