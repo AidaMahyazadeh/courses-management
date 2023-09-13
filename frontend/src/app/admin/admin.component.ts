@@ -19,9 +19,15 @@ constructor(
 
    ngOnInit(){
     this.adminName = (this.authStorageService.getUserName()!)
-   
+    
    }
 
+   getRoute(){
+    if (this.router.url.endsWith('/admin')) {
+      return this.showContent = false
+    }
+      return this.showContent = true
+   }
+   }
   
 
-}
