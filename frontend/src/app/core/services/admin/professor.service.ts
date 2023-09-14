@@ -14,4 +14,10 @@ export class ProfessorService {
   getAllProfessore():Observable<IProfessor[]>{
     return this.http.get<IProfessor[]>(this.professorsUrl)
   }
+
+  addNewProfessor(newProfessor :IProfessor ):Observable<IProfessor>{
+    return this.http.put<IProfessor>(this.professorsUrl,newProfessor)
+  }
+
+  
 }
