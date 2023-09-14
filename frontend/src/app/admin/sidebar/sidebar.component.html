@@ -3,6 +3,14 @@
         <div class="col-auto col-md-2">
             <div class="sidebar ">
                 <ul class="nav nav-pills flex-column mt-4">
+                    <div class="card">
+                        <div id="userImage">
+                            <img src="../../../assets/images/admin.png" alt="">
+                            <div class="card-body">
+                                <h4 class="font-weight-bold text-center text-danger">{{adminName}}</h4>
+                            </div>
+                        </div>
+                    </div>
                     <li class="nav-item">
                         <i class="fa fa-user" aria-hidden="true"></i> 
                         <label [routerLink]="['users-list']">Users</label>
