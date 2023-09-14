@@ -35,6 +35,13 @@ constructor(
     )
   }
 
+getRoute(){
+  if(this.router.url.includes('admin')){
+    return false
+  }
+   return true
+}  
+
 isLoggedin(){
  return this.authorizationService.isLoggedIn()
 }
