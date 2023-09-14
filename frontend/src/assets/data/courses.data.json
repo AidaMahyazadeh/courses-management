@@ -7,19 +7,19 @@
     "price": 115, "ratings": 4.5, "image":"assets/images/course-image-2.jpeg",
       "description": "This course starts from scratch, you neither need to know Angular 1 nor Angular 2!From Setup to Deployment, this course covers it all! You'll learn all about Components, Directives, Services, Forms, Http Access, Authentication, Optimizing an Angular App with Modules and Offline Compilation and much more - and in the end: You'll learn how to deploy an application!But that's not all! This course will also show you how to use the Angular CLI and feature a complete project, which allows you to practice the things learned throughout the course!And if you do get stuck, you benefit from an extremely fast and friendly support - both via direct messaging or discussion. You have my word! ;-)"
     },
-    { "id":3, "name":"React course for beginners", "author": "Steve Smith", "duration": 18.5, "type": "Free", 
+    { "id":3, "name":"React course for beginners", "author": "Jonas Carry", "duration": 18.5, "type": "Free", 
     "price":119, "ratings": 4.0, "image":"assets/images/course-image-3.jpeg",
       "description": "In this course you will learn the fundamentals of React. This course is purely designed for beginners and teaches you all the basic concepts of React step by step"
     },
-    { "id":4, "name":"Advance Angular Course","author": "Steve Smith", "duration": 19.5, "type": "Premium", 
+    { "id":4, "name":"Advance Angular Course","author": "Sara Smith", "duration": 19.5, "type": "Premium", 
     "price": 140, "ratings": 4.8, "image":"assets/images/course-image-4.jpeg",
       "description": "In this course you will learn all the concepts of Angular from basic to advance. This course will start teaching you from basics of Angular and as you progress, you will learn all the advance concepts."
     },
-    { "id":5, "name":"JavaScript Course", "author": "John Heikela", "duration": 60, "type": "Premium", 
+    { "id":5, "name":"JavaScript Course", "author": "Helen Jadi", "duration": 60, "type": "Premium", 
     "price": 110, "ratings": 4.5, "image":"assets/images/course-image-5.jpeg",
       "description": "In this course you will learn the complete modern JavaScript step by step. This course is purely designed for beginners and teaches you all the concepts of javascript from beginner to advance level."
     },
-    { "id":6, "name":"Angular with .NET Core", "author": "Mark Vought", "duration": 68, "type": "Premium", 
+    { "id":6, "name":"Angular with .NET Core", "author": "Hanna Kehl", "duration": 68, "type": "Premium", 
     "price": 170, "ratings": 4.5, "image":"assets/images/course-image-6.jpeg",
       "description": "In this course you will learn the fundamentals of Angular framework with .NET Core. This course is purely designed for beginners and teaches you all the basic concepts of Angular step by step and how to use it with back-end framework like .NET Core."
     },
@@ -31,7 +31,7 @@
     "price": 69, "ratings": 4.8, "image":"assets/images/course-image-8.jpeg",
       "description": "In this course you will learn about reactive web development using HTML & CSS. This course will start teaching you from basics of HTML & CSS and as you progress, you will learn all the advance concepts."
     },
-    {"id":9, "name":"UX Design Course: Advance", "author": "John Smith", "duration": 20.0, "type": "Premium", 
+    {"id":9, "name":"UX Design Course Advance", "author": "Jim Steven", "duration": 20.0, "type": "Premium", 
      "price": 115, "ratings": 4.8, "image":"assets/images/course-image-9.jpeg",
       "description": "Using the latest best practices in Web Design and Mobile Design as well as User Interface and User Experience Design (UI/UX), this course focuses on efficiently getting you from zero to a point where you can get hired or win freelance contracts. We will use in demand tools like Figma to show you a full workflow from start to finish. Graduates of Andrei’s courses are now working at Google, Tesla, Amazon, Apple, IBM, JP Morgan, Facebook, + other top tech companies.The course also includes 100+ assets and premium design templates that you can keep and use to customize for all your future projects. We guarantee you this is the most comprehensive online resource on Design skills!"
     }
