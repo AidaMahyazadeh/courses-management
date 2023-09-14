@@ -1,6 +1,7 @@
+<!-- <button class="btn btn-new">Add new professor</button>
 <div class="container">
     <section class="table-header">
-      <h1>User list</h1>
+      <h1>professor list</h1>
     </section>
     <section class="table-body">
       <table>
@@ -18,7 +19,7 @@
                   <td>{{professor.courses}}</td>
                 
                   <td>
-                    <button (click)="onDelete(professor.id)">delete</button>
+                    <button class="btn btn-delete" (click)="onDelete(professor.id)">delete</button>
                   </td>
               </tr>
           </tbody>
@@ -26,4 +27,38 @@
     </section>
   </div>
 
+ -->
+<div class="heading-text">Professor List</div>
+<button class="btn btn-success" (click)="openModal()" >Add new Professor </button>
 
+<div class="row">
+  <div class="card col-12 col-md-6 col-lg-4" *ngFor="let professor of professores; let i= index">
+    <div class="professorImage">
+      <img *ngIf="professor.gender==='male'" 
+      [src]="'../../assets/images/maleprofessor.png'"
+      alt="">
+      <img *ngIf="professor.gender==='female'" [src]="'../../assets/images/femaleprofessor.png'" alt="">
+    </div>
+  
+  <div class="card-body">
+    <div class="text">
+      <b class="title">Professor Name :</b>
+      <b class="detail">{{professor.name}}</b>
+    </div>
+    <div class="text">
+      <b class="title">Email :</b>
+      <b class="detail">{{professor.email}}</b>
+    </div>
+    <div class="text">
+      <b class="title">Gender :</b>
+      <b class="detail">{{professor.gender}}</b>
+    </div>
+    <div class="text">
+      <b class="title">Courses :</b>
+      <b class="detail">{{professor.courses}}</b>
+    </div>
+    <button class="btn btn-danger" (click)="onDeleteProfessor(i)">Delete</button>
+    <button class="btn btn-warning float-end" (click)="openModify(professor.name)">Modify</button>
+  </div>
+  </div>
+</div>
