@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import IUser from '../../models/user.model';
 
 import ICourse from '../../models/course.model';
-import { BehaviorSubject} from 'rxjs';
 import { AuthStorageService } from '../auth/auth-storage.service';
 
 
@@ -13,12 +12,10 @@ import { AuthStorageService } from '../auth/auth-storage.service';
 })
 export class AdminAuthStorageService {
   
- usersList :IUser[] =[];
- 
-  usersListSubject$ = new BehaviorSubject<IUser[]>([]);
-  enrolledCourse :ICourse[]=[];
-  enrolledCourseSubject$ = new BehaviorSubject<ICourse[]>([]);
+ usersList :IUser[] =[]; 
+ enrolledCourse :ICourse[]=[];
 
+ 
   constructor(private authStorageService :AuthStorageService){}
 
   storeUserslist(){
@@ -52,6 +49,8 @@ export class AdminAuthStorageService {
      getAllUsers(){
       return JSON.parse(localStorage.getItem('usersList')!) 
      }
+
+     
 }
 
  
