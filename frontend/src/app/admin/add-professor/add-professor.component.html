@@ -1,0 +1,86 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h4 class="font-wieght-bold pt-3">Signup</h4>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form   (ngSubmit)="addProfessor()" [formGroup]="professorForm">
+                            <div class="form-group p-3">
+                                <label> Professor Name :</label>
+                                <div class="input-field"
+                                [class.error]="professorForm.controls['name'].dirty&& professorForm.hasError('required','name')"
+                                >
+                                    
+                                    <input 
+                                    type="text"
+                                    formControlName="name"
+                                    >
+                                </div>
+                            </div>
+                            <small 
+                            class="text-danger"
+                            *ngIf="professorForm.controls['name'].dirty&& professorForm.hasError('required','name')">*name is required.</small>
+                            <div class="form-group p-3">
+                                <label >E-mail : </label>
+                                <div class="input-field"
+                                [class.error]="professorForm.controls['email'].dirty&& professorForm.hasError('required','email')|| professorForm.hasError('email','email')||professorForm.hasError('pattern','email')"
+                                >
+                                    <input
+                                     type="email"
+                                     formControlName="email"
+                                     >
+                                </div>
+                            </div>
+                           <div>
+                            <small 
+                            class="text-danger"
+                            *ngIf="professorForm.controls['email'].dirty&& professorForm.hasError('required','email')">*Email is required.</small>
+                            <small 
+                            class="text-danger"
+                            *ngIf="professorForm.controls['email'].dirty&& professorForm.hasError('email','email')||professorForm.hasError('pattern','email')">*Email should have a correct format.</small>
+                           </div>
+        
+                           <div class="form-group p-3">
+                            <label >Course :</label>
+                            <div class="input-field"
+                            [class.error]="professorForm.controls['courses'].dirty&&professorForm.hasError('required','courses')"
+                            >
+                                <input 
+                                type="text"
+                                formControlName="courses"
+                                >
+
+                            </div>
+                        </div>
+                        <small 
+                                class="text-danger"
+                                *ngIf="professorForm.controls['courses'].dirty&& professorForm.hasError('required','courses')">*course is required.</small>
+                            <div class="form-group p-3">
+                                <label>Gender :</label>
+                                <div class="input-field"
+                                [class.error]="professorForm.controls['gender'].dirty&&professorForm.hasError('required','gender')"
+                                >
+                                    <input 
+                                    type="text"
+                                    formControlName="gender"
+                                    >
+                                    
+                                </div>
+                            </div>
+                                <small 
+                                class="text-danger"
+                                *ngIf="professorForm.controls['gender'].dirty&& professorForm.hasError('required','gender')">*gender is required.</small>
+                            <button 
+                            type="submit"
+                            class="btn btn-primary mt-4  btn-block w-100">Save</button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
