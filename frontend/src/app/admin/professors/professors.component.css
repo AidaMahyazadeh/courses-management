@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,11 +40,78 @@ td{
     background-color: #c2a8e3;
 }
 
-button{
+.btn-new{
+    margin-left: 200px;
+}
+
+.btn-delete{
     border-radius: 5px;
     background-color: beige;
     width: 50px;
     color: red;
     border: none;
     
+} */
+.heading-text{
+   font-weight: bold;
+   color: blueviolet;
+   letter-spacing: 1px;
+   margin-left: 800px;
+   margin-top: 40px;
+   margin-bottom: 40px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.row{
+    margin-left: 300px;
+}
+
+.card{
+    height: 60%;
+    width: 40%;
+    border-radius: 10px;
+    margin: 40px;
+}
+
+.professorImage{ 
+    
+    margin: auto;
+    align-content: center;
+    border-radius: 50%;
+}
+
+img{
+   
+    width: 100px;
+    height: 120;
+}
+
+.text{
+    font-weight: bold; margin-bottom: 10px;
+}
+
+.title{
+    color: darkblue;
+}
+
+.detail{
+    color: red;
+}
+
+.btn-success{
+    width: 100px;
+    height: 60px;
+    margin-left: 300px;
+}
+
+.btn-danger{
+    border-radius: 5px;
+    align-items: center;
+}
+
+.btn-warning{
+    border-radius: 5px;
+    color: beige;
+    /* margin-left: 50px; */
 }
